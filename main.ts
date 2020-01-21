@@ -64,6 +64,7 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 `
 }
+// changes the score
 sprites.onOverlap(SpriteKind.ammo, SpriteKind.poop, function (sprite, otherSprite) {
     info.changeScoreBy(1)
 })
@@ -119,6 +120,31 @@ function score () {
 function whatever () {
 	
 }
+// what happens when something collides.
+//
+//
+// --> 
+//
+//
+//
+//
+//
+// -->
+//
+//
+//
+//
+//
+//
+// -->
+//
+//
+//
+//
+//
+//
+//
+// -->
 sprites.onOverlap(SpriteKind.ammo, SpriteKind.Enemy, function (sprite, otherSprite) {
     projectile2.destroy()
 })
@@ -175,7 +201,8 @@ ball()
 raindrop()
 hero()
 cloud()
-game.splash("live as long as possible", "")
+game.splash("survive as long", "as possible")
+// shoots projectiles at bad guys.
 game.onUpdateInterval(100, function () {
     projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . 
@@ -197,6 +224,30 @@ game.onUpdateInterval(100, function () {
 `, mySprite, 0, -100)
     projectile.setKind(SpriteKind.ammo)
 })
+// this is the projectiles from the sky.
+//
+//
+//
+// -->
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// -->
 game.onUpdateInterval(1000, function () {
     projectile2 = sprites.createProjectileFromSprite(img`
 . . . . . 5 5 5 5 5 5 . . . . . 
@@ -215,7 +266,7 @@ game.onUpdateInterval(1000, function () {
 . . 5 5 5 4 4 4 4 4 4 5 5 5 . . 
 . . . 5 5 5 5 5 5 5 5 5 5 . . . 
 . . . . . 5 5 5 5 5 5 . . . . . 
-`, cloud1, 0, 45)
+`, cloud1, -5, 65)
     projectile2.setKind(SpriteKind.Enemy)
     projectile2.y += 0
     projectile2.vx += 0
@@ -238,7 +289,7 @@ game.onUpdateInterval(1000, function () {
 . . 5 5 5 4 4 4 4 4 4 5 5 5 . . 
 . . . 5 5 5 5 5 5 5 5 5 5 . . . 
 . . . . . 5 5 5 5 5 5 . . . . . 
-`, CLOUD123, 0, 45)
+`, CLOUD123, 5, 65)
     PROJECTILE5.setKind(SpriteKind.enemy2)
     PROJECTILE5.y += 0
     PROJECTILE5.vx += 0
