@@ -74,9 +74,9 @@ function hero () {
 . . . . . . . f f f f . . . . . 
 . . . . . f f 5 5 5 5 f f . . . 
 . . . . f 5 5 5 5 5 5 5 5 f . . 
-. . . f 5 f f f 5 5 f f f 5 f . 
-. . . f 5 f f f 5 5 f f f 5 f . 
-. . f 5 5 f f f 5 5 f f f 5 5 f 
+. . . f 5 1 1 1 5 5 1 1 1 5 f . 
+. . . f 5 1 f 1 5 5 1 f 1 5 f . 
+. . f 5 5 1 1 1 5 5 1 1 1 5 5 f 
 . . f 5 5 5 5 5 5 5 5 5 5 5 5 f 
 . . f 5 5 5 5 5 5 5 5 5 5 5 5 f 
 . . f 5 5 5 5 5 5 5 5 5 5 5 5 f 
@@ -123,7 +123,8 @@ function whatever () {
 // what happens when something collides.
 //
 //
-// --> 
+// -->
+//
 //
 //
 //
@@ -150,9 +151,6 @@ sprites.onOverlap(SpriteKind.ammo, SpriteKind.Enemy, function (sprite, otherSpri
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherSprite) {
     game.over(false, effects.melt)
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-	
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.over(false, effects.melt)
@@ -202,8 +200,8 @@ raindrop()
 hero()
 cloud()
 game.splash("survive as long", "as possible")
-// shoots projectiles at bad guys.
-game.onUpdateInterval(100, function () {
+// shoots a projectile from the sprite
+game.onUpdateInterval(700, function () {
     projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . b . . . . . . . 
@@ -266,7 +264,7 @@ game.onUpdateInterval(1000, function () {
 . . 5 5 5 4 4 4 4 4 4 5 5 5 . . 
 . . . 5 5 5 5 5 5 5 5 5 5 . . . 
 . . . . . 5 5 5 5 5 5 . . . . . 
-`, cloud1, -5, 65)
+`, cloud1, 0, 50)
     projectile2.setKind(SpriteKind.Enemy)
     projectile2.y += 0
     projectile2.vx += 0
@@ -289,7 +287,7 @@ game.onUpdateInterval(1000, function () {
 . . 5 5 5 4 4 4 4 4 4 5 5 5 . . 
 . . . 5 5 5 5 5 5 5 5 5 5 . . . 
 . . . . . 5 5 5 5 5 5 . . . . . 
-`, CLOUD123, 5, 65)
+`, CLOUD123, 0, 50)
     PROJECTILE5.setKind(SpriteKind.enemy2)
     PROJECTILE5.y += 0
     PROJECTILE5.vx += 0
