@@ -3,6 +3,7 @@ namespace SpriteKind {
     export const ammo = SpriteKind.create()
     export const poop = SpriteKind.create()
     export const fireball = SpriteKind.create()
+    export const enemy2 = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -63,6 +64,9 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 `
 }
+sprites.onOverlap(SpriteKind.ammo, SpriteKind.poop, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+})
 function hero () {
     mySprite = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -109,12 +113,6 @@ function cloud () {
     cloud1.setFlag(SpriteFlag.BounceOnWall, true)
     cloud1.setKind(SpriteKind.poop)
 }
-sprites.onOverlap(SpriteKind.ammo, SpriteKind.ammo, function (sprite, otherSprite) {
-	
-})
-sprites.onOverlap(SpriteKind.ammo, SpriteKind.fireball, function (sprite, otherSprite) {
-    PROJECTILE5.destroy()
-})
 function score () {
 	
 }
@@ -122,16 +120,19 @@ function whatever () {
 	
 }
 sprites.onOverlap(SpriteKind.ammo, SpriteKind.Enemy, function (sprite, otherSprite) {
-    projectile2.destroy(effects.spray, 500)
+    projectile2.destroy()
 })
-sprites.onDestroyed(SpriteKind.poop, function (sprite) {
-	
+sprites.onOverlap(SpriteKind.Player, SpriteKind.enemy2, function (sprite, otherSprite) {
+    game.over(false, effects.melt)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 	
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.over(false, effects.melt)
+})
+sprites.onOverlap(SpriteKind.ammo, SpriteKind.enemy2, function (sprite, otherSprite) {
+    PROJECTILE5.destroy()
 })
 function raindrop () {
     scene.setBackgroundColor(14)
@@ -164,8 +165,8 @@ function ball () {
 }
 let projectile: Sprite = null
 let CLOUD123: Sprite = null
-let projectile2: Sprite = null
 let PROJECTILE5: Sprite = null
+let projectile2: Sprite = null
 let cloud1: Sprite = null
 let mySprite: Sprite = null
 CLOUD_2()
@@ -174,6 +175,7 @@ ball()
 raindrop()
 hero()
 cloud()
+game.splash("live as long as possible", "")
 game.onUpdateInterval(100, function () {
     projectile = sprites.createProjectileFromSprite(img`
 . . . . . . . . . . . . . . . . 
@@ -237,7 +239,7 @@ game.onUpdateInterval(1000, function () {
 . . . 5 5 5 5 5 5 5 5 5 5 . . . 
 . . . . . 5 5 5 5 5 5 . . . . . 
 `, CLOUD123, 0, 45)
-    PROJECTILE5.setKind(SpriteKind.fireball)
+    PROJECTILE5.setKind(SpriteKind.enemy2)
     PROJECTILE5.y += 0
     PROJECTILE5.vx += 0
 })
