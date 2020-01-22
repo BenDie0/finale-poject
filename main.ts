@@ -200,6 +200,28 @@ raindrop()
 hero()
 cloud()
 game.splash("survive as long", "as possible")
+// shoots a projectile from the sprite
+game.onUpdateInterval(200, function () {
+    projectile = sprites.createProjectileFromSprite(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . b . . . . . . . 
+. . . . . . . . b . . . . . . . 
+. . . . . . . b b b . . . . . . 
+. . . . . . . b b b . . . . . . 
+. . . . . . b b b b b . . . . . 
+. . . . . . b b b b b . . . . . 
+. . . . . . b b b b b . . . . . 
+. . . . . . b b b b b . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`, mySprite, 0, -100)
+    projectile.setKind(SpriteKind.ammo)
+})
 // this is the projectiles from the sky.
 //
 //
@@ -269,26 +291,4 @@ game.onUpdateInterval(500, function () {
     PROJECTILE5.setKind(SpriteKind.enemy2)
     PROJECTILE5.y += 0
     PROJECTILE5.vx += 0
-})
-// shoots a projectile from the sprite
-game.onUpdateInterval(700, function () {
-    projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . b . . . . . . . 
-. . . . . . . . b . . . . . . . 
-. . . . . . . b b b . . . . . . 
-. . . . . . . b b b . . . . . . 
-. . . . . . b b b b b . . . . . 
-. . . . . . b b b b b . . . . . 
-. . . . . . b b b b b . . . . . 
-. . . . . . b b b b b . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`, mySprite, 0, -100)
-    projectile.setKind(SpriteKind.ammo)
 })
