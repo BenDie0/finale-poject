@@ -93,22 +93,22 @@ function hero () {
 }
 function cloud () {
     cloud1 = sprites.createProjectileFromSide(img`
-. . . . . . . f f . . . . . . . 
-. . . . . . f 7 7 f . . . . . . 
-. . . . f . f 7 7 f . . . . . . 
-. . . f 7 f f f 7 7 f . . f . . 
-. . . f 7 f f 7 7 7 f . f 7 f . 
-. . . f 7 f f 7 7 7 f f 7 7 f . 
-. . . f 7 f f 7 7 f f 7 7 7 f . 
-. . . f 7 f f 7 7 7 f f f f . . 
-. . . f 7 7 f 7 7 7 f . . . . . 
-. . . f 7 7 f f 7 7 f . . . . . 
-. . . f 7 7 f 7 7 7 f . . . . . 
-. . . . f f f 7 7 7 f . . . . . 
-. . . . . . f 7 7 f f . . . . . 
-. . . . . . f 7 7 7 f . . . . . 
-. . . . . . f 7 7 7 f . . . . . 
-. . . . . . . f f f . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+f . f f . . . . f . . . f . . f 
+f . f . f . . f . f . . f f . f 
+f . f f . . . f f f . . f . f f 
+f . f . f . f . . . f . f . . f 
+f . f . f . f . . . f . f . . f 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
 `, 10, 0)
     cloud1.setPosition(4, 7)
     cloud1.setFlag(SpriteFlag.BounceOnWall, true)
@@ -163,22 +163,22 @@ function raindrop () {
 }
 function CLOUD_2 () {
     CLOUD123 = sprites.createProjectileFromSide(img`
-. . . . . . . f f . . . . . . . 
-. . . . . . f 7 7 f . . . . . . 
-. . . . f . f 7 7 f . . . . . . 
-. . . f 7 f f f 7 7 f . . f . . 
-. . . f 7 f f 7 7 7 f . f 7 f . 
-. . . f 7 f f 7 7 7 f f 7 7 f . 
-. . . f 7 f f 7 7 f f 7 7 7 f . 
-. . . f 7 f f 7 7 7 f f f f . . 
-. . . f 7 7 f 7 7 7 f . . . . . 
-. . . f 7 7 f f 7 7 f . . . . . 
-. . . f 7 7 f 7 7 7 f . . . . . 
-. . . . f f f 7 7 7 f . . . . . 
-. . . . . . f 7 7 f f . . . . . 
-. . . . . . f 7 7 7 f . . . . . 
-. . . . . . f 7 7 7 f . . . . . 
-. . . . . . . f f f . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+f . f f . . . . f . . . f . . f 
+f . f . f . . f . f . . f f . f 
+f . f f . . . f f f . . f . f f 
+f . f . f . f . . . f . f . . f 
+f . f . f . f . . . f . f . . f 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
 `, -10, 0)
     CLOUD123.setPosition(153, 7)
     CLOUD123.setFlag(SpriteFlag.BounceOnWall, true)
@@ -203,22 +203,22 @@ game.splash("survive as long", "as possible")
 // shoots a projectile from the sprite
 game.onUpdateInterval(200, function () {
     projectile = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . b . . . . . . . 
-. . . . . . . . b . . . . . . . 
-. . . . . . . b b b . . . . . . 
-. . . . . . . b b b . . . . . . 
-. . . . . . b b b b b . . . . . 
-. . . . . . b b b b b . . . . . 
-. . . . . . b b b b b . . . . . 
-. . . . . . b b b b b . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . . f d d d d f . . . . . 
+. . . . . f f f f f f . . . . . 
+. . . . f 2 1 2 1 8 1 f . . . . 
+. . . . f 2 1 2 8 1 8 f . . . . 
+. . . f 1 2 1 2 1 8 1 8 f . . . 
+. . . f 1 2 1 2 1 2 1 2 f . . . 
+. . . f 1 2 1 2 1 2 1 2 f . . . 
+. . . f 1 2 1 2 1 2 1 2 f . . . 
+. . . . f 2 1 2 1 2 1 f . . . . 
+. . . . f 2 1 2 1 2 1 f . . . . 
+. . . . . f f f f f f . . . . . 
+. . . . . . f d d f . . . . . . 
+. . . . . f d d d d f . . . . . 
+. . . . f d d f f d d f . . . . 
+. . . . f f f . . f f f . . . . 
 `, mySprite, 0, -100)
     projectile.setKind(SpriteKind.ammo)
 })
